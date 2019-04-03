@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'basket', loadChildren: './pages/basket/basket.module#BasketPageModule' },
   { path: 'product', loadChildren: './pages/product/product.module#ProductPageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
 ];
 
 @NgModule({
