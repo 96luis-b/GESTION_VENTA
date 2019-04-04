@@ -4,7 +4,7 @@ import { LoginService } from '../../providers/login/login.service';
 
 import { InspectTxtService } from '../../service/inspectTxt/inspect-txt.service';
 import { RouterModule, Routes, Router } from '@angular/router';
-import {}
+import { AlertService } from '../../service/alert/alert.service';
 
 
 
@@ -20,7 +20,10 @@ export class LoginPage implements OnInit {
 		username:""
 	}
 
-  constructor(public loginService: LoginService, public inspectTxt: InspectTxtService, private router: Router) { }
+  constructor(public loginService: LoginService, 
+  			  public inspectTxt: InspectTxtService, 
+  			  private router: Router,
+  			  public alertService: AlertService) { }
 
   ngOnInit() {
   }
@@ -36,10 +39,10 @@ export class LoginPage implements OnInit {
         if(data.status >= 200 && data.status < 300){
         this.router.navigateByUrl('/menu/tabs');
 	  	}
-        this.alert.presentAlert(data.message,"OK para continuar");
+        this.alertService.presentAlert(data.message,"OK para continuar");
         
         },error => {
-        this.alert.presentAlert("Error de conexion","Intente mas tarde");
+        this.alertService.presentAlert("Error de conexion","Intente mas tarde");
           console.log(error);
         });
 		
