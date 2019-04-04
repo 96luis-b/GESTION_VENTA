@@ -9,8 +9,23 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
+    path: 'tabs',
+    component: TabsPage,
+    children:[
+      {
+        path: 'dashboard',
+        loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
+      },
+      {
+        path:'dashboard/basket',
+        loadChildren: '../basket/basket.module#BasketPageModule'
+      }
+    ]
+  },
+  {
     path: '',
-    component: TabsPage
+    redirectTo: 'tabs/dashboard',
+    pathMatch: 'full'
   }
 ];
 
