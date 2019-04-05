@@ -13,15 +13,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
-	
+<ion-content>
 	<ion-list>
   		<ion-item *ngFor="let item of items">
+        <ion-checkbox></ion-checkbox>
    			<ion-label>{{item}}</ion-label>
+        <div slot="end">
+          <ion-label slot="end">n</ion-label>
+          <ion-button>+</ion-button>
+          <ion-button >-</ion-button>
+        </div>
   		</ion-item>
   	</ion-list>
-	<ion-button expand="block" routerLink="/menu/tabs/tabs/dashboard/basket" routerDirection="forward">
-		Go to Basket
-	</ion-button>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" routerLink="/menu/tabs/tabs/dashboard/basket" routerDirection="forward">
+      Go to Basket
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
