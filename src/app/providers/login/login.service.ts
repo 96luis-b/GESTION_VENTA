@@ -12,16 +12,14 @@ import { Component } from '@angular/core';
 export class LoginService {
 	url = "http://localhost:8080/GESTION_VENTA/"; 
 
-//el problema es que no se a añadido el componente HttpClient en el app.module
-// por ende al llamarlo como parametron del constructor, me sale un error
-  constructor() { 
+  constructor(public http: HttpClient) { 
     console.log('Hello HttpProvider Provider');
 
   }
 
-/*
+
   login(user):Observable<any>{
 	return this.http.post(`${this.url}/Login`, user, {headers: {'Content-Type': 'application/json'}});
   }
-*/
+
 }
