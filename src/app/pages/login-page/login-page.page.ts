@@ -6,29 +6,28 @@ import { InspectTxtService } from '../../service/inspectTxt/inspect-txt.service'
 import { RouterModule, Routes, Router } from '@angular/router';
 import { AlertService } from '../../service/alert/alert.service';
 
-
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login-page',
+  templateUrl: './login-page.page.html',
+  styleUrls: ['./login-page.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPagePage implements OnInit {
 
 	user = {
 		password:"",
 		username:""
 	}
 
-  constructor(public loginService: LoginService, 
-  			  public inspectTxt: InspectTxtService, 
-  			  private router: Router,
-  			  public alertService: AlertService) { }
+  constructor(public inspectTxt: InspectTxtService,
+  		      private router: Router,
+  		      public alertService: AlertService,
+  		      private http: LoginService) { }
 
   ngOnInit() {
   }
-/*
-  login(){
+
+  /*
+	login(){
 	 
     if(this.inspectTxt.notNullValueLogin(this.user)){
 		return;
@@ -47,6 +46,6 @@ export class LoginPage implements OnInit {
         });
 		
   }
-*/
+  */
 
 }
