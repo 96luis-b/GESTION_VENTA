@@ -9,8 +9,8 @@
 
 <ion-content>
 	<ion-list>
-  		<ion-item *ngFor="let item of items">
-   			<ion-button>{{item}}</ion-button>
+  		<ion-item *ngFor="let product of products">
+   			<ion-button  (click)="gotoProductDetails(product)">{{product.name_product}}</ion-button>
   		</ion-item>
   	</ion-list>
 </ion-content>
@@ -18,8 +18,8 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block" routerLink="/menu/tabs/tabs/dashboard/basket" routerDirection="forward">
-      Go to Basket
+    <ion-button expand="block" [href]="'/details-product/2'" routerDirection="forward">
+      Go to Details Product
     </ion-button>
   </ion-toolbar>
 </ion-footer>

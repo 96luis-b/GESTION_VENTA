@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardProviderService } from '../../providers/dashboard/dashboard-provider.service';
+import { ProductProviderService } from '../../providers/product/product-provider.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { AlertService } from '../../service/alert/alert.service';
 
@@ -31,7 +31,7 @@ export class DashboardPage implements OnInit {
 	items = [];
 	text = "";
   products;
-  constructor(public http: DashboardProviderService,
+  constructor(public http: ProductProviderService,
               public router: Router,
               public alertService: AlertService) { 
    /*

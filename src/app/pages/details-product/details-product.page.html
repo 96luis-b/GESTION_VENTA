@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  	<ion-buttons slot=start>
+  		<ion-back-button defaulthref=""></ion-back-button>
+  	</ion-buttons>
+    <ion-title>Details Page</ion-title>
+    <ion-buttons slot="end" *ngIf="!newProduct">
+    	<ion-icon name="trash"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div>
+	<ion-item>
+  		<ion-label position="floating">Nombre del producto</ion-label>
+  		<ion-input [(ngModel)]="product.name_product"></ion-input>
+	</ion-item>
+	<ion-item>
+  		<ion-label position="floating">Descripción del product</ion-label>
+  		<ion-input [(ngModel)]="product.description"></ion-input>
+	</ion-item>
+	<ion-item>
+  		<ion-label position="floating">Existencia</ion-label>
+  		<ion-input type="number" [(ngModel)]="product.existence"></ion-input>
+	</ion-item>
+	<ion-item>
+  		<ion-label position="floating">Disponible</ion-label>
+  		<ion-input type="number" [(ngModel)]="product.available"></ion-input>
+	</ion-item>
+	</div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" routerLink="/menu/product" routerDirection="forward">
+      Guardar producto
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
