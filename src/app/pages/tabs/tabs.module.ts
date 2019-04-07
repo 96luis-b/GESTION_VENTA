@@ -15,11 +15,12 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
-      },
+      }/*,
       {
         path:'dashboard/basket',
         loadChildren: '../basket/basket.module#BasketPageModule'
       }
+      */
     ]
   },
   {

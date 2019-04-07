@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductProviderService } from '../../providers/product/product-provider.service';
 import { RouterModule, Routes, Router, ActivatedRoute } from '@angular/router';
 import { AlertService } from '../../service/alert/alert.service';
-
+import { InspectTxtService } from '../../service/inspectTxt/inspect-txt.service';
 
 @Component({
   selector: 'app-details-product',
@@ -12,34 +12,80 @@ import { AlertService } from '../../service/alert/alert.service';
 export class DetailsProductPage implements OnInit {
 
 	product = {
+    id_product:null,
 		name_product: "",
-		description: "",
-		existence: 0,
-		available: 0,
+		price: null,
+		existence: null,
+		available: null,
 	}
 	newProduct = true;
 	id_product;
+  valueButton = "Guardar Producto"
   constructor(public http: ProductProviderService,
-  			  public alertService: AlertService,
-  			  private activeRoute: ActivatedRoute) {
-/*
-  	let id_product;
-  	this.http.getProduct(id_product).subscribe(data => {
-        console.log(data);
-        if(data.status >= 200 && data.status < 300){
-         	this.product = data.product;
-			newProduct = false;
-
-          }
-        },error => {
-          this.alertService.presentAlert("Error de conexion","Intente mas tarde");
-          console.log(error);
-        });
-  	*/
-   }
+  			      public alertService: AlertService,
+  			      private activeRoute: ActivatedRoute,
+              public inspectTxt: InspectTxtService) {}
 
   ngOnInit() {
-  	this.id_product = JSON.parse(this.activeRoute.snapshot.paramMap.get("id"));
+  	/*
+    this.id_product = JSON.parse(this.activeRoute.snapshot.paramMap.get("id_product"));
+    if(this.id_product){
+      this.http.getProduct(this.id_product).subscribe(data=>{
+        if(data.status >= 200 && data.status < 300){
+          this.product = data;
+          this.newProduct = false;
+          this.valueButton = "Actualizar Producto"
+        }
+      },error=>{
+          this.alertService.presentAlert("Error de conexion","Intente mas tarde");
+          console.log(error);
+      })
+    }else{
+      this.valueButton = "Guardar Producto"
+      return;
+    }
+    */
   }
+
+
+
+  saveProduct(){
+    if(this.id_product > 0){
+        this.http.updateProduct(this.product).subscribe(data=>{
+          if(data.status >= 200 && data.status < 300){
+            this.alertService.presentAlert("Se ha actualizado correctamente","OK");
+          }
+        },error=>{
+            this.alertService.presentAlert("Error de conexion","Intente mas tarde");
+            console.log(error);
+        })
+      
+     }
+    else{
+      if(this.inspectTxt.notNullValueDetailsProduct(this.product)){
+          this.http.createProduct(this.product).subscribe(data=>{
+          if(data.status >= 200 && data.status < 300){
+            this.alertService.presentAlert("Se ha creado correctamente","OK");
+          }
+        },error=>{
+            this.alertService.presentAlert("Error de conexion","Intente mas tarde");
+            console.log(error);
+        })
+        }
+      return;
+    }
+  }
+
+  deleteProduct(){
+     this.http.deleteProduct(this.product).subscribe(data=>{
+          if(data.status >= 200 && data.status < 300){
+            this.alertService.presentAlert("Se ha actualizado correctamente","OK");
+          }
+        },error=>{
+            this.alertService.presentAlert("Error de conexion","Intente mas tarde");
+            console.log(error);
+        })
+  }
+
 
 }

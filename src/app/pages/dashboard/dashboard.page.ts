@@ -62,13 +62,10 @@ export class DashboardPage implements OnInit {
     if (this.text) {
 
       if (this.list[i].name_product.toUpperCase().indexOf(this.text) > -1) {
-       	this.items.push(this.list[i].name_product);
+       	this.items.push(this.list[i]);
       } 
     }       
   }
   }
 
-  cancel(){
-   this.isSearchbarOpened = true;
-  }
 }

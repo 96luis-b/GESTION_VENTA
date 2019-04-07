@@ -70,11 +70,12 @@ products = [];
   ngOnInit() {
   }
 
+/*
   gotoProductDetails(product){
   	console.log(product);
         this.router.navigateByUrl(`/details-product/${JSON.stringify(product)}`);
-  	this.activeRoute.snapshot.paramMap.get("p");
 
   }
+*/
 
 }

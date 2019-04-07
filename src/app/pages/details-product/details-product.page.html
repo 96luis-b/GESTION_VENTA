@@ -4,7 +4,7 @@
   		<ion-back-button defaulthref=""></ion-back-button>
   	</ion-buttons>
     <ion-title>Details Page</ion-title>
-    <ion-buttons slot="end" *ngIf="!newProduct">
+    <ion-buttons (click)="deleteProduct()" slot="end" *ngIf="!newProduct">
     	<ion-icon name="trash"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
@@ -18,8 +18,8 @@
   		<ion-input [(ngModel)]="product.name_product"></ion-input>
 	</ion-item>
 	<ion-item>
-  		<ion-label position="floating">Descripción del product</ion-label>
-  		<ion-input [(ngModel)]="product.description"></ion-input>
+  		<ion-label position="floating">Price</ion-label>
+  		<ion-input type="number" [(ngModel)]="product.price"></ion-input>
 	</ion-item>
 	<ion-item>
   		<ion-label position="floating">Existencia</ion-label>
@@ -36,7 +36,7 @@
 <ion-footer>
   <ion-toolbar>
     <ion-button expand="block" routerLink="/menu/product" routerDirection="forward">
-      Guardar producto
+      {{valueButton}}
     </ion-button>
   </ion-toolbar>
 </ion-footer>

@@ -49,4 +49,14 @@ console.log(json);
 
     }
 
+    public notNullValueDetailsProduct(json){
+         let name_product = json.name_product , description = json.description;
+        if(name_product == '' || description == '' ){
+            this.alertService.presentAlert('A ocuarrido un error',' Debes de llenar todos los campos');
+            return true;
+        }
+       
+    }
+
+
 }
