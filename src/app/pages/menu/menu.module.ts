@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path:'basket',
         loadChildren: '../basket/basket.module#BasketPageModule'
+      },
+      {
+        path:'stadistics',
+        loadChildren: '../stadistics/stadistics.module#StadisticsPageModule'
       }
     ]
   }

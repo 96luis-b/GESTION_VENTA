@@ -23,6 +23,11 @@ pages = [
     title: 'Search',
     url:'/menu/tabs',
     icon: 'search'
+  },
+  {
+    title: 'Stadistics',
+    url:'/menu/stadistics',
+    icon: 'stadistics'
   }
 ]
 
