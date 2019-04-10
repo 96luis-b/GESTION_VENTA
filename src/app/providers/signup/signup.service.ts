@@ -19,7 +19,7 @@ export class SignupService {
 
 
 signup(user):Observable<any>{
-	return this.http.post(`${this.url}Signup`, user, {headers: {'Content-Type': 'application/json'}});
+	return this.http.post(`${this.url}SignUp`, {user}, {headers: {'Content-Type': 'application/json'}});
   }
 
 }

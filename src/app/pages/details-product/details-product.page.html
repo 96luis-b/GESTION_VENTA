@@ -3,7 +3,7 @@
   	<ion-buttons slot=start>
   		<ion-back-button defaulthref=""></ion-back-button>
   	</ion-buttons>
-    <ion-title>Details Page</ion-title>
+    <ion-title>Detalles de Producto</ion-title>
     <ion-buttons (click)="deleteProduct()" slot="end" *ngIf="!newProduct">
     	<ion-icon name="trash"></ion-icon>
     </ion-buttons>
@@ -35,7 +35,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block" routerLink="/menu/product" routerDirection="forward">
+    <ion-button expand="block" (click)="saveProduct()" routerDirection="forward">
       {{valueButton}}
     </ion-button>
   </ion-toolbar>

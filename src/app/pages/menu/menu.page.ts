@@ -10,22 +10,22 @@ export class MenuPage implements OnInit {
 
 pages = [
   {
-    title: 'Product',
+    title: 'Producto',
     url:'/menu/product',
     icon: 'list'
   },
   {
-    title: 'Basket',
+    title: 'Canasto',
     url:'/menu/basket',
     icon:'basket'
   },
   {
-    title: 'Search',
+    title: 'Buscar',
     url:'/menu/tabs',
     icon: 'search'
   },
   {
-    title: 'Stadistics',
+    title: 'Estadisticas',
     url:'/menu/stadistics',
     icon: 'stadistics'
   }

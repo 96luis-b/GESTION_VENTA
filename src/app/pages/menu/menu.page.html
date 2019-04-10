@@ -11,15 +11,21 @@
   		<ion-list>
   			<ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
   				<ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
-            <ion-label>
+            <ion-icon name="p.icon"></ion-icon>
   						{{p.title}}
-  					</ion-label>
   				</ion-item>
   			</ion-menu-toggle>
-  			
+      <!--
+        <ion-menu-toggle>
+          <ion-item tappable (click)="goToBasket()" routerDirection="root">
+            <ion-icon name="basket" slot="start"></ion-icon>
+            basket
+          </ion-item>  
+        </ion-menu-toggle>
+  		-->
   			<ion-item tappable routerLink="/login-page" routerDirection="root">
-				<ion-icon name="log-out" slot="start"></ion-icon>
-				Logout
+				  <ion-icon name="log-out" slot="start"></ion-icon>
+				  Cerrar sesión
   			</ion-item>
   		</ion-list>
 

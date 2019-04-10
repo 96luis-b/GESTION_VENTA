@@ -24,13 +24,14 @@ export class DetailsProductPage implements OnInit {
   constructor(public http: ProductProviderService,
   			      public alertService: AlertService,
   			      private activeRoute: ActivatedRoute,
-              public inspectTxt: InspectTxtService) {}
+              public inspectTxt: InspectTxtService,
+              private router: Router) {}
 
   ngOnInit() {
-  	
+
     this.id_product = this.activeRoute.snapshot.paramMap.get("id");
     console.log(this.id_product)
-    if(this.id_product){
+    if(this.id_product != 0){
       this.http.getProduct(this.id_product).subscribe(data=>{
         if(data.status >= 200 && data.status < 300){
           this.product = data.product;
@@ -54,31 +55,37 @@ export class DetailsProductPage implements OnInit {
   saveProduct(){
     if(this.id_product > 0){
       console.log("se actualizara el producto")
-      /*
+        if(this.inspectTxt.notNullValueDetailsProduct(this.product)){
+        return;
+        }
         this.http.updateProduct(this.product).subscribe(data=>{
           if(data.status >= 200 && data.status < 300){
-            this.alertService.presentAlert("Se ha actualizado correctamente","OK");
+            this.alertService.presentAlert(data.message,"OK");
+            this.router.navigateByUrl("/menu/product");
           }
         },error=>{
             this.alertService.presentAlert("Error de conexion","Intente mas tarde");
             console.log(error);
         })
-      */
+      
      }
     else{
       console.log("se agregara un nuevo producto")
-      /*
+      
       if(this.inspectTxt.notNullValueDetailsProduct(this.product)){
-          this.http.createProduct(this.product).subscribe(data=>{
-          if(data.status >= 200 && data.status < 300){
-            this.alertService.presentAlert("Se ha creado correctamente","OK");
-          }
-        },error=>{
-            this.alertService.presentAlert("Error de conexion","Intente mas tarde");
-            console.log(error);
-        })
+        return;
+      }
+      this.http.createProduct(this.product).subscribe(data=>{
+        if(data.status >= 200 && data.status < 300){
+          this.alertService.presentAlert(data.message,"OK");
+          this.router.navigateByUrl("/menu/product");
         }
-        */
+      },error=>{
+          this.alertService.presentAlert("Error de conexion","Intente mas tarde");
+          console.log(error);
+      })
+        
+        
       return;
     }
   }
@@ -86,7 +93,8 @@ export class DetailsProductPage implements OnInit {
   deleteProduct(){
      this.http.deleteProduct(this.product).subscribe(data=>{
           if(data.status >= 200 && data.status < 300){
-            this.alertService.presentAlert("Se ha actualizado correctamente","OK");
+            this.alertService.presentAlert(data.message,"OK");
+            this.router.navigateByUrl("/menu/product");
           }
         },error=>{
             this.alertService.presentAlert("Error de conexion","Intente mas tarde");

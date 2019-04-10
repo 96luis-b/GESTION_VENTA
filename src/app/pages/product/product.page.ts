@@ -64,6 +64,11 @@ products = [];
   
    }
 
+   /**
+   *  necesito un metodo que se ejecute siempre que 
+   *  se muestre la pagina aunque ya este cargado el archivo(pagina)
+   */
+
   ngOnInit() {
   }
 
