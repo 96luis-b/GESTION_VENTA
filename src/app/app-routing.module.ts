@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'basket', loadChildren: './pages/basket/basket.module#BasketPageModule' },
   { path: 'basket/:basket', loadChildren: './pages/basket/basket.module#BasketPageModule' },
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
+  { path: 'stadistics', loadChildren: './pages/stadistics/stadistics.module#StadisticsPageModule' },
 ];
 
 @NgModule({
