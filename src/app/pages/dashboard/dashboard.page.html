@@ -16,8 +16,8 @@
 <ion-content>
 	<ion-list>
   		<ion-item *ngFor="let item of items">
-        <ion-checkbox></ion-checkbox>
-   			<ion-label>{{item.name_product}}</ion-label>
+        <ion-label>{{item.name_product}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="item.check" (ionChange)="selectProduct(item)"></ion-checkbox>
         <div slot="end">
           <ion-label align-items-center>n</ion-label>
           <ion-button>+</ion-button>
@@ -30,7 +30,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block" routerLink="/basket/{{items}}" routerDirection="forward">
+    <ion-button expand="block" (click)="goToBasket()" routerDirection="forward">
       Go to Basket
     </ion-button>
   </ion-toolbar>

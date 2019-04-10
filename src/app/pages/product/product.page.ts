@@ -14,9 +14,6 @@ export class ProductPage implements OnInit {
 
 products = [];
 
-
-
-
 	listProduct = {
     "listProductAll": [
         {
@@ -51,9 +48,9 @@ products = [];
   			  public alertService: AlertService,
   			  public activeRoute: ActivatedRoute,
   			  public router: Router) {
-  	this.products = this.listProduct.listProductAll;
-  	console.log(this.products);
-  	/* 
+  	//this.products = this.listProduct.listProductAll;
+  	//console.log(this.products);
+  	
      this.http.listProductAll().subscribe(data => {
         console.log(data);
         if(data.status >= 200 && data.status < 300){
@@ -63,19 +60,19 @@ products = [];
           this.alertService.presentAlert("Error de conexion","Intente mas tarde");
           console.log(error);
         });
-     */
+     
   
    }
 
   ngOnInit() {
   }
 
-/*
+
   gotoProductDetails(product){
   	console.log(product);
         this.router.navigateByUrl(`/details-product/${JSON.stringify(product)}`);
 
   }
-*/
+
 
 }

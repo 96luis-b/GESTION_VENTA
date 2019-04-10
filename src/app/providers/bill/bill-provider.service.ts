@@ -6,21 +6,19 @@ import { Component } from '@angular/core';
 import { ServerPointService } from '../../providers/serverPoint/server-point.service'
 
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class BillProviderService {
+
 	url;
-  constructor(public http: HttpClient,
+  constructor(private http: HttpClient,
   			  public serverPoint: ServerPointService) { 
-    console.log('Hello HttpProvider Provider');
     this.url = serverPoint.point();
   }
 
-
-  login(user):Observable<any>{
-	return this.http.post(`${this.url}Login`, user, {headers: {'Content-Type': 'application/json'}});
+toSale(bill):Observable<any>{
+	return this.http.post(`${this.url}ToSale`, bill, {headers: {'Content-Type': 'application/json'}});
   }
 
 }

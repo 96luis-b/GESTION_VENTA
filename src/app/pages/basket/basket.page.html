@@ -14,23 +14,23 @@
     		<ion-card-title>
     			<ion-item>
     				<ion-icon name="walk" slot="end"></ion-icon>
-   					<h1>{{product.name_product}}</h1>
+   					<h5>{{product.name_product}}</h5>
   				</ion-item>
     		</ion-card-title>
   		</ion-card-header>
   		<ion-card-content>
    		 <ion-grid>
    		 	<ion-row>
-   		 		<ion-col size="4">Precio:</ion-col>
-   		 		<ion-col size="4">Disponible:</ion-col>
-   		 		<ion-col size="4">Existencia:</ion-col>
+   		 		<ion-col size="4"><h5>Precio: {{product.price}}</h5></ion-col>
+   		 		<ion-col size="4"><h5>Disponible: {{product.available}}</h5></ion-col>
+   		 		<ion-col size="4"><h5>Cantidad: {{product.quantity}}</h5></ion-col>
    		 	</ion-row>
    		 </ion-grid>
   		</ion-card-content>
   		<ion-card-content>
-   			<ion-item slot="end">
-    			<ion-button><ion-icon name="pluss"></ion-icon></ion-button>
-    			<ion-button><ion-icon name="remove"></ion-icon></ion-button>
+   			<ion-item>
+    			<ion-button (click)="less(product)">-</ion-button>
+    			<ion-button (click)="more(product)">+</ion-button>
   			</ion-item>
   		</ion-card-content>
   	</ion-card>
@@ -40,9 +40,9 @@
 <ion-footer>
   <ion-toolbar>
   	<ion-item align-self-center>
-  		<ion-label >Bs 34567</ion-label>
+  		<ion-label>Bs. {{bill.total}}</ion-label>
   	</ion-item>
-    <ion-button expand="block" routerLink="/basket" routerDirection="forward">
+    <ion-button expand="block" (click)="confirmation()" routerDirection="forward">
       Confirmación
     </ion-button>
   </ion-toolbar>

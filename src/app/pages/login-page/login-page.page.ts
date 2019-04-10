@@ -26,13 +26,13 @@ export class LoginPagePage implements OnInit {
   ngOnInit() {
   }
 
-  /*
+  
 	login(){
 	 
     if(this.inspectTxt.notNullValueLogin(this.user)){
 		return;
 	}
-    this.loginService.login(this.user)
+    this.http.login(this.user)
       .subscribe(data => {
         console.log(data);
         if(data.status >= 200 && data.status < 300){
@@ -46,6 +46,6 @@ export class LoginPagePage implements OnInit {
         });
 		
   }
-  */
+  
 
 }

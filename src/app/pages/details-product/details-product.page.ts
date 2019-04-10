@@ -27,12 +27,14 @@ export class DetailsProductPage implements OnInit {
               public inspectTxt: InspectTxtService) {}
 
   ngOnInit() {
-  	/*
-    this.id_product = JSON.parse(this.activeRoute.snapshot.paramMap.get("id_product"));
+  	
+    this.id_product = this.activeRoute.snapshot.paramMap.get("id");
+    console.log(this.id_product)
     if(this.id_product){
       this.http.getProduct(this.id_product).subscribe(data=>{
         if(data.status >= 200 && data.status < 300){
-          this.product = data;
+          this.product = data.product;
+          console.log(this.product)
           this.newProduct = false;
           this.valueButton = "Actualizar Producto"
         }
@@ -44,13 +46,15 @@ export class DetailsProductPage implements OnInit {
       this.valueButton = "Guardar Producto"
       return;
     }
-    */
+    
   }
 
 
 
   saveProduct(){
     if(this.id_product > 0){
+      console.log("se actualizara el producto")
+      /*
         this.http.updateProduct(this.product).subscribe(data=>{
           if(data.status >= 200 && data.status < 300){
             this.alertService.presentAlert("Se ha actualizado correctamente","OK");
@@ -59,9 +63,11 @@ export class DetailsProductPage implements OnInit {
             this.alertService.presentAlert("Error de conexion","Intente mas tarde");
             console.log(error);
         })
-      
+      */
      }
     else{
+      console.log("se agregara un nuevo producto")
+      /*
       if(this.inspectTxt.notNullValueDetailsProduct(this.product)){
           this.http.createProduct(this.product).subscribe(data=>{
           if(data.status >= 200 && data.status < 300){
@@ -72,6 +78,7 @@ export class DetailsProductPage implements OnInit {
             console.log(error);
         })
         }
+        */
       return;
     }
   }

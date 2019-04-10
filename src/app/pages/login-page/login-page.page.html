@@ -22,6 +22,14 @@
   </div>
 
   <div>
-	<ion-button expand="block" routerLink="/menu/tabs"> Iniciar sesión </ion-button>
+	<ion-button expand="block" (click)="login()"> Iniciar sesión </ion-button>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="light" expand="block" routerLink="/signup" routerDirection="forward">
+      Signup
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
