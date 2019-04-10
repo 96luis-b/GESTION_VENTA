@@ -19,11 +19,13 @@ pages = [
     url:'/menu/basket',
     icon:'basket'
   },
+  /*
   {
     title: 'Buscar',
     url:'/menu/tabs',
     icon: 'search'
   },
+  */
   {
     title: 'Estadisticas',
     url:'/menu/stadistics',
