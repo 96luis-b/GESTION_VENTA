@@ -14,18 +14,18 @@ pages = [
     url:'/menu/product',
     icon: 'list'
   },
+  /*
   {
     title: 'Canasto',
     url:'/menu/basket',
     icon:'basket'
   },
-  /*
+  */
   {
     title: 'Buscar',
     url:'/menu/tabs',
     icon: 'search'
   },
-  */
   {
     title: 'Estadisticas',
     url:'/menu/stadistics',
