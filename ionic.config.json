@@ -1,5 +1,7 @@
 {
   "name": "GESTION_VENTA2",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
