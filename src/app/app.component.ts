@@ -15,6 +15,7 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+    console.log("aqui se inicializa la appMobile")
   }
 
   initializeApp() {
