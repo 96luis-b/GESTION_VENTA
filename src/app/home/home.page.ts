@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatabaseService } from '../service/datab'
+//import { DatabaseService } from '../service/datab'
 
 
 @Component({
