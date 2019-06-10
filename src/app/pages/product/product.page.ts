@@ -12,6 +12,10 @@ import { AlertService } from '../../service/alert/alert.service';
 })
 export class ProductPage implements OnInit {
 
+/*
+*  se debe de cargar la pagina cada vez que se enfoque la pagina
+*/
+
 products = [];
 
 	listProduct = {
@@ -70,6 +74,7 @@ products = [];
    */
 
   ngOnInit() {
+    console.log("ckjsnkcjsndn")
   }
 
 

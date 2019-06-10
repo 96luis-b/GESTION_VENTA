@@ -19,6 +19,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private sqlite: SQLite
   ) {
+   /*
     this.initializeApp();
     console.log("aqui se inicializa la appMobile")
       this.sqlite.create({
@@ -28,6 +29,7 @@ export class AppComponent {
    .then((db:SQLiteObject)=>{
      this.database = db;
    });
+   */
   }
 
   initializeApp() {

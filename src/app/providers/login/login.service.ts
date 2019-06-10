@@ -13,7 +13,7 @@ import { ServerPointService } from '../../providers/serverPoint/server-point.ser
 export class LoginService {
 	url;
   constructor(public http: HttpClient,
-  			  public serverPoint: ServerPointService) { 
+  			      public serverPoint: ServerPointService) { 
     console.log('Hello HttpProvider Provider');
     this.url = serverPoint.point();
   }
